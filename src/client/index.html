@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="dotjem.blog">
+<head>
+    <title>My Blog</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- TODO: Theme selection -->
+    <link href="themes/bootstrap/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="themes/bootstrap/boostrap.custom.css" rel="stylesheet" type="text/css" />
+
+    <base href="/" />
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">My Blog</a>
+            </div>
+            <!-- TODO: Menu items should be based on modules -->
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="">Login</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+
+
+        <!-- TODO: View starts here, bellow is just added some test content while we are styling. -->
+        <div jem-view="main">
+            <div class="row">
+
+                <div class="col-lg-8">
+                    Content
+                </div>
+
+                <div class="col-lg-4">
+                    Menu
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; Company 2013</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

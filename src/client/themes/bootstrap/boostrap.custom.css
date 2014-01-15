@@ -1,0 +1,43 @@
+body {
+    padding-top: 20px;
+}
+
+.footer {
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Customize the nav-justified links to be fill the entire space of the .navbar */
+
+.nav-justified {
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+.nav-justified > li > a {
+    margin-bottom: 0;
+    padding: 5px;
+    color: #777;
+    font-weight: bold;
+    text-align: center;
+    background-color: #e5e5e5;
+
+}
+.nav-justified > .active > a,
+.nav-justified > .active > a:hover,
+.nav-justified > .active > a:focus {
+    background-color: #ddd;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .masthead,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
