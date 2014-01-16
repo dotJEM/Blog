@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
+    <link href="lib/styles/core/normalize.css" rel="stylesheet" type="text/css" />
     <!-- TODO: Theme selection -->
     <link href="themes/bootstrap/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="themes/bootstrap/boostrap.custom.css" rel="stylesheet" type="text/css" />
@@ -15,7 +16,7 @@
     <base href="/" />
 </head>
 <body>
-
+<!-- TODO: Need a "static" view here to allow users to build their own blog from the bottom. -->
     <div class="container">
 
         <div class="navbar navbar-default" role="navigation">
@@ -42,16 +43,20 @@
         </div>
 
 
-        <!-- TODO: View starts here, bellow is just added some test content while we are styling. -->
+        <!-- TODO: Dynamic View starts here, bellow is just added some test content while we are styling. -->
         <div jem-view="main">
+
+            <h1>Example page header <small>Subtext for header</small></h1>
+
             <div class="row">
-
-                <div class="col-lg-8">
-                    Content
-                </div>
-
-                <div class="col-lg-4">
-                    Menu
+                <div class="col-lg-9"></div>
+                <div class="col-lg-3">
+                    <h4>Categories</h4>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#">Programming</a></li>
+                        <li><a href="#">Design</a></li>
+                        <li><a href="#">Food</a></li>
+                    </ul>
                 </div>
 
             </div>
@@ -62,6 +67,14 @@
         </div>
 
     </div>
+
+    <!-- TODO: Scripts should be referenced from CDN's or bulked together in one script or with AMD modules -->
+    <script src="/lib/scripts/modenizr/impl/modernizr-2.6.2-respond-1.1.0.min.js" />
+    <script src="/lib/scripts/jquery/impl/jquery-2.0.3.js" />
+    <script src="/lib/scripts/angular/impl/angular.js" />
+    <script src="/lib/scripts/angular/impl/angular-resource.js" />
+    <script src="/lib/scripts/angular/impl/angular-animate.js" />
+    <script src="/lib/scripts/angular-routing/impl/angular-routing.js" />
 
 </body>
 </html>
