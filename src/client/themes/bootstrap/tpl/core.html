@@ -1,0 +1,45 @@
+<div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">My Blog</a>
+    </div>
+    <!-- TODO: Menu items should be based on modules -->
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li ng-repeat="module in model.modules">
+                <a sref="module.name" active-class="active">{{module.title}}</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="">Login</a></li>
+        </ul>
+    </div><!--/.nav-collapse -->
+</div>
+
+<!-- TODO: Dynamic View starts here, bellow is just added some test content while we are styling. -->
+<div ><!-- jem-view="main" -->
+
+    <h1>Example page header <small>Subtext for header</small></h1>
+
+    <div class="row">
+        <div class="col-lg-9"></div>
+        <div class="col-lg-3">
+            <h4>Categories</h4>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="#">Programming</a></li>
+                <li><a href="#">Design</a></li>
+                <li><a href="#">Food</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; Owner 2013</p>
+</div>

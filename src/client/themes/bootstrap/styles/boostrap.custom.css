@@ -22,14 +22,16 @@ body {
     font-weight: bold;
     text-align: center;
     background-color: #e5e5e5;
-
 }
 .nav-justified > .active > a,
 .nav-justified > .active > a:hover,
 .nav-justified > .active > a:focus {
     background-color: #ddd;
 }
-
+.navbar-default .navbar-nav .active {
+    color: #555555 !important;
+    background-color: #e7e7e7 !important;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

@@ -10,71 +10,36 @@
 
     <link href="lib/styles/core/normalize.css" rel="stylesheet" type="text/css" />
     <!-- TODO: Theme selection -->
-    <link href="themes/bootstrap/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="themes/bootstrap/boostrap.custom.css" rel="stylesheet" type="text/css" />
+    <link href="themes/bootstrap/styles/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="themes/bootstrap/styles/boostrap.custom.css" rel="stylesheet" type="text/css" />
 
     <base href="/" />
 </head>
-<body>
-<!-- TODO: Need a "static" view here to allow users to build their own blog from the bottom. -->
-    <div class="container">
-
-        <div class="navbar navbar-default" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">My Blog</a>
-            </div>
-            <!-- TODO: Menu items should be based on modules -->
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="">Login</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
 
 
-        <!-- TODO: Dynamic View starts here, bellow is just added some test content while we are styling. -->
-        <div jem-view="main">
 
-            <h1>Example page header <small>Subtext for header</small></h1>
+<body ng-controller="siteController">
 
-            <div class="row">
-                <div class="col-lg-9"></div>
-                <div class="col-lg-3">
-                    <h4>Categories</h4>
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">Programming</a></li>
-                        <li><a href="#">Design</a></li>
-                        <li><a href="#">Food</a></li>
-                    </ul>
-                </div>
+    <div class="container" ng-include="'themes/bootstrap/tpl/core.html'"></div>
 
-            </div>
-        </div>
+<!-- TODO: Scripts should be referenced from CDN's or bulked together in one script or with AMD modules -->
+<script src="/lib/scripts/jquery/impl/jquery-2.0.3.js" type="text/javascript" ></script>
+<script src="/lib/scripts/modenizr/impl/modernizr-2.6.2-respond-1.1.0.min.js" ></script>
+<script src="/lib/scripts/angular/impl/angular.js" ></script>
+<script src="/lib/scripts/angular/impl/angular-resource.js" ></script>
+<script src="/lib/scripts/angular/impl/angular-animate.js" ></script>
+<script src="/lib/scripts/angular-routing/impl/angular-routing.js" ></script>
 
-        <div class="footer">
-            <p>&copy; Company 2013</p>
-        </div>
+<!-- TODO: Scripts should be referenced from CDN's or bulked together in one script or with AMD modules -->
+<script src="/core/scripts/dotjem.core.js" ></script>
 
-    </div>
+<script src="/modules/home/scripts/home.js" ></script>
+<script src="/modules/blog/scripts/blog.js" ></script>
+<script src="/modules/gallery/scripts/gallery.js" ></script>
+<script src="/modules/portfolio/scripts/portfolio.js" ></script>
+<script src="/modules/about/scripts/about.js" ></script>
 
-    <!-- TODO: Scripts should be referenced from CDN's or bulked together in one script or with AMD modules -->
-    <script src="/lib/scripts/modenizr/impl/modernizr-2.6.2-respond-1.1.0.min.js" />
-    <script src="/lib/scripts/jquery/impl/jquery-2.0.3.js" />
-    <script src="/lib/scripts/angular/impl/angular.js" />
-    <script src="/lib/scripts/angular/impl/angular-resource.js" />
-    <script src="/lib/scripts/angular/impl/angular-animate.js" />
-    <script src="/lib/scripts/angular-routing/impl/angular-routing.js" />
+<script src="/core/scripts/dotjem.js" ></script>
 
 </body>
 </html>

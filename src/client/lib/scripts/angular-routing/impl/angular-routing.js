@@ -3585,8 +3585,7 @@ var jemLinkDirective = [
                         var sref = scope.$eval(attrs.sref), params = scope.$eval(attrs.params);
                         $state.goto(sref, params);
                     });
-                }
-                ;
+                }                ;
                 var deregistration = scope.$on(EVENTS.STATE_CHANGE_SUCCESS, activeFn);
                 activeFn();
                 if(tag in attr) {
