@@ -15,7 +15,7 @@ angular.module('dotjem.blog.portfolio').config([<any>'$stateProvider','$modulePr
       .state('portfolio', {
         route: '/portfolio',
         views: {
-          'root': { template: '??/??/??/portfolio.html' }
+          'root': { template: 'modules/portfolio/tpl/portfolio.html' }
         }
       })
   }]);

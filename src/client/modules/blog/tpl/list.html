@@ -1,0 +1,24 @@
+DOJO
+
+<article class="summary" ng-repeat="article in model.articles">
+    <header>
+        <time jm-date="article.Created" class="datebadge"></time>
+        <div>
+            <a sref="'blog.post'" params="{ id: article.Id }" ng-bind="article.Title"></a>
+
+            <div>
+                <span class="icon-tag" ng-show="article.Tags" />
+                <a ng-repeat="tag in article.Tags" href="#/tag/{{tag.Title}}" ng-bind="tag.Title"></a>
+            </div>
+        </div>
+        <a sref="'blog.post.comment'" params="{ id: article.Id }" class="speachbubble">
+            <span class="point"></span><em ng-bind="article.ChildCount"></em>
+        </a>
+    </header>
+    <div class="summarycontent">
+        <div jm-compile-bind="article.Html"></div>
+    </div>
+    <footer>
+        <address><span>by {{article.Author}}</span></address>
+    </footer>
+</article>

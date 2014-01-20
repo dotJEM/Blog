@@ -36,3 +36,28 @@ angular.module('dotjem.blog.core').controller('siteController', [<any>'$scope','
         $scope.model = $scope.model || {};
         $scope.model.modules = $module.all();
     }]);
+
+var jmCompileBindDirective = [<any>'$compile',
+    function ($compile) {
+        'use strict';
+        return {
+            restrict: 'ECA',
+            compile: function (element, attr) {
+                return function (scope, element, attr) {
+                    var srcExp = attr.jmCompileBind || attr.src;
+
+                    element.addClass('ng-binding').data('$binding', attr.ngBind);
+                    scope.$watch(srcExp, (src) => {
+                        if (src) {
+                            element.html(src);
+                            $compile(element.contents())(scope);
+                        } else {
+                            element.html('');
+                        }
+                    });
+                }
+            }
+        };
+    }];
+
+angular.module('dotjem.blog.core').directive('dbBind', jmCompileBindDirective);

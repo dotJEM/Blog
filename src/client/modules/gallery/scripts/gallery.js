@@ -15,7 +15,7 @@ angular.module('dotjem.blog.gallery').config([
         $stateProvider.state('gallery', {
             route: '/gallery',
             views: {
-                'root': { template: '??/??/??/gallery.html' }
+                'root': { template: 'modules/gallery/tpl/gallery.html' }
             }
         });
     }]);

@@ -6,8 +6,8 @@ angular.module('dotjem.blog',
 //      'dotjem.blog.auth',
       'dotjem.blog.home',
       'dotjem.blog.blog',
-//      'dotjem.blog.gallery',
-//      'dotjem.blog.portfolio',
+      'dotjem.blog.gallery',
+      'dotjem.blog.portfolio',
       'dotjem.blog.about'
 //      'dotjem.blog.search',
 //      'dotjem.blog.admin'
