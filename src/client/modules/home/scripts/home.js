@@ -15,7 +15,7 @@ angular.module('dotjem.blog.home').config([
         $stateProvider.state('home', {
             route: '/',
             views: {
-                'root': { template: '??/??/??/home.html' }
+                'root': { template: 'modules/home/tpl/home.html' }
             }
         });
     }]);
