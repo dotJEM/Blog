@@ -3,7 +3,7 @@
 angular.module('dotjem.blog.core', ['dotjem.routing']);
 
 //TODO: Move to file
-var $ModuleProvider = [function () {
+angular.module('dotjem.blog.core').provider('$module', [function () {
         var modules = {};
 
         this.register = function (name, mod) {
@@ -25,9 +25,7 @@ var $ModuleProvider = [function () {
 
                 return service;
             }];
-    }];
-
-angular.module('dotjem.blog.core').provider('$module', $ModuleProvider);
+    }]);
 
 angular.module('dotjem.blog.core').controller('siteController', [
     '$scope', '$module', '$state',
@@ -81,7 +79,7 @@ angular.module('dotjem.blog.core').provider('content', [function () {
                 id: id++,
                 type: type,
                 title: title,
-                tags: [{ title: 'tagged' }],
+                tags: [{ title: 'tagged' }, { title: 'tucked' }, { title: 'towed' }],
                 childCount: 42,
                 html: html,
                 author: 'John Doe',

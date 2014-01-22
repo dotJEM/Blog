@@ -4,33 +4,30 @@
 angular.module('dotjem.blog.core', ['dotjem.routing']);
 
 //TODO: Move to file
-var $ModuleProvider = [<any>
-  function() {
+angular.module('dotjem.blog.core').provider('$module', [<any>
+    function() {
+        var modules = {};
 
-    var modules = {};
-
-    this.register = function(name, mod){
-        modules[name] = mod;
-        modules[name].name = name;
-    };
-
-    this.$get = [<any>function(){
-        var service: any = {};
-
-        service.modules = modules;
-        service.all = function(){
-            var mods = [];
-            angular.forEach(modules, function(value) {
-                mods.push(value);
-            });
-            return mods;
+        this.register = function(name, mod){
+            modules[name] = mod;
+            modules[name].name = name;
         };
 
-        return service;
-    }]
-  }];
+        this.$get = [<any>function(){
+            var service: any = {};
 
-angular.module('dotjem.blog.core').provider('$module', $ModuleProvider);
+            service.modules = modules;
+            service.all = function(){
+                var mods = [];
+                angular.forEach(modules, function(value) {
+                    mods.push(value);
+                });
+                return mods;
+            };
+
+            return service;
+        }]
+    }]);
 
 angular.module('dotjem.blog.core').controller('siteController', [<any>'$scope','$module','$state',
     function($scope, $module, $state){
@@ -100,7 +97,7 @@ angular.module('dotjem.blog.core').provider('content', [<any>function(){
             id: id++,
             type: type,
             title: title,
-            tags: [ { title: 'tagged' } ],
+            tags: [ { title: 'tagged' }, { title: 'tucked' }, { title: 'towed' } ],
             childCount: 42,
             html: html,
             author: 'John Doe',

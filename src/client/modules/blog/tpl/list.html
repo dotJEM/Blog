@@ -1,22 +1,19 @@
-<article class="summary" ng-repeat="article in model.articles">
-    <header>
-        <time jm-date="article.Created" class="datebadge"></time>
-        <div>
-            <a sref="'blog.post'" params="{ id: article.id }" ng-bind="article.title"></a>
-
-            <div>
-                <span class="icon-tag" ng-show="article.tags" />
-                <a ng-repeat="tag in article.tags" href="#/tag/{{tag.title}}" ng-bind="tag.title"></a>
-            </div>
+<article ng-repeat="article in model.articles">
+    <h3><a sref="'blog.post'" params="{ id: article.id }" ng-bind="article.title"></a></h3>
+    <div class="clearfix">
+        <div class="pull-left">
+            <span class="icon-tag" ng-show="article.tags" /> &nbsp;
+            <span ng-repeat="tag in article.tags">
+                <a href="#/tag/{{tag.title}}" ng-bind="tag.title"></a>{{$last ? '' : ', '}}
+            </span>
         </div>
-        <a sref="'blog.post.comment'" params="{ id: article.id }" class="speachbubble">
-            <span class="point"></span><em ng-bind="article.childCount"></em>
+        <a sref="'blog.post.comment'" params="{ id: article.id }" class="pull-right">
+            Comments &nbsp;<span class="badge" ng-bind="article.childCount"></span>
         </a>
-    </header>
-    <div class="summarycontent">
-        <div db-compile="article.html"></div>
     </div>
-    <footer>
-        <address><span>by {{article.author}}</span></address>
+    <div db-compile="article.html" style="margin: 15px 0"></div>
+    <footer class="pull-right">
+        by {{article.author}}
     </footer>
+    <div class="clearfix"></div>
 </article>

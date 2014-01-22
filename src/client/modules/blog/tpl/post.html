@@ -1,25 +1,18 @@
-<article class="post ng-scope">
-    <header>
-        <time jm-date="model.content.created" class="datebadge" datetime="2012-03-04"><span>2012</span><span>MAR</span><span>04</span></time>
-        <div>
-            <div>
-                <span class="icon-tag ng-hide" ng-show="model.content.tags"></span>
-                <!-- ngRepeat: tag in model.content.Tags -->
-            </div>
-        </div>
-        <a sref="'blog.post.comment'" params="{ id: model.content.id }" class="speachbubble">
-            <span class="point"></span><em class="ng-binding">9</em>
-        </a>
-    </header>
-    <div class="articlecontent">
-        <div>
-            <div class="float"></div>
-            <span db-compile-bind="model.content.html" class="ng-binding">
-
+<article>
+    <div class="clearfix">
+        <div class="pull-left">
+            <span class="icon-tag" ng-show="model.content.tags" /> &nbsp;
+            <span ng-repeat="tag in model.content.tags">
+                <a href="#/tag/{{tag.title}}" ng-bind="tag.title"></a>{{$last ? '' : ', '}}
             </span>
         </div>
+
+        <a sref="'blog.post.comment'" params="{ id: model.content.id }" class="pull-right">
+            Comments &nbsp;<span class="badge" ng-bind="model.content.childCount"></span>
+        </a>
     </div>
-    <footer>
-        <address class="ng-binding">by Jens Melgaard</address>
+    <div db-compile="model.content.html" style="margin: 15px 0"></div>
+    <footer class="pull-right">
+        by {{model.content.author}}
     </footer>
 </article>
