@@ -4,6 +4,12 @@
 
 node_modules
 
+src/client/core/**/*.js
+src/client/core/**/*.js.map
+
+src/client/modules/**/*.js
+src/client/modules/**/*.js.map
+
 #####################################
 ###        Idea Web Storm         ###
 #####################################

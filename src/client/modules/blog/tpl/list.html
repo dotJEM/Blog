@@ -1,24 +1,22 @@
-DOJO
-
 <article class="summary" ng-repeat="article in model.articles">
     <header>
         <time jm-date="article.Created" class="datebadge"></time>
         <div>
-            <a sref="'blog.post'" params="{ id: article.Id }" ng-bind="article.Title"></a>
+            <a sref="'blog.post'" params="{ id: article.id }" ng-bind="article.title"></a>
 
             <div>
-                <span class="icon-tag" ng-show="article.Tags" />
-                <a ng-repeat="tag in article.Tags" href="#/tag/{{tag.Title}}" ng-bind="tag.Title"></a>
+                <span class="icon-tag" ng-show="article.tags" />
+                <a ng-repeat="tag in article.tags" href="#/tag/{{tag.title}}" ng-bind="tag.title"></a>
             </div>
         </div>
-        <a sref="'blog.post.comment'" params="{ id: article.Id }" class="speachbubble">
-            <span class="point"></span><em ng-bind="article.ChildCount"></em>
+        <a sref="'blog.post.comment'" params="{ id: article.id }" class="speachbubble">
+            <span class="point"></span><em ng-bind="article.childCount"></em>
         </a>
     </header>
     <div class="summarycontent">
-        <div jm-compile-bind="article.Html"></div>
+        <div db-compile="article.html"></div>
     </div>
     <footer>
-        <address><span>by {{article.Author}}</span></address>
+        <address><span>by {{article.author}}</span></address>
     </footer>
 </article>

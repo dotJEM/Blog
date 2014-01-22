@@ -1,13 +1,13 @@
 <article class="post ng-scope">
     <header>
-        <time jm-date="model.content.Created" class="datebadge" datetime="2012-03-04"><span>2012</span><span>MAR</span><span>04</span></time>
+        <time jm-date="model.content.created" class="datebadge" datetime="2012-03-04"><span>2012</span><span>MAR</span><span>04</span></time>
         <div>
             <div>
-                <span class="icon-tag ng-hide" ng-show="model.content.Tags"></span>
+                <span class="icon-tag ng-hide" ng-show="model.content.tags"></span>
                 <!-- ngRepeat: tag in model.content.Tags -->
             </div>
         </div>
-        <a sref="'blog.post.comment'" params="{ id: article.Id }" class="speachbubble">
+        <a sref="'blog.post.comment'" params="{ id: model.content.id }" class="speachbubble">
             <span class="point"></span><em class="ng-binding">9</em>
         </a>
     </header>
