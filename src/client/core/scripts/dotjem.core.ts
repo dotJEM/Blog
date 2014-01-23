@@ -31,6 +31,9 @@ angular.module('dotjem.blog.core').provider('$module', [<any>
 
 angular.module('dotjem.blog.core').controller('siteController', [<any>'$scope','$module','$state',
     function($scope, $module, $state){
+        $scope.settings = $scope.settings || {};
+        $scope.settings.title = "My Blog";
+
         $scope.model = $scope.model || {};
         $scope.model.modules = $module.all();
     }]);

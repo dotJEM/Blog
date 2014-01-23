@@ -7,12 +7,12 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     banner: "", //grunt.file.read('../banner'),
     clean: {
-      src: ['../build']
+      src: ['build']
     },
 
     typescript: {
       src: {
-        src: ['src/**/*.ts'],
+        src: ['src/client/**/*.ts'],
         dest: 'build',
         options: {
           module: 'commonjs',
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
 
     karma: {
       jquery: {
-        configFile: 'test-grunt-jquery-config.js',
+        configFile: 'env/karma-config.js',
         port: 4000,
         runnerPort: 4010,
         singleRun: true,
@@ -93,22 +93,12 @@ module.exports = function (grunt) {
       }
     },
 
-    //https://npmjs.org/package/grunt-ngdocs
-    ngdocs: {
-      options: {
-        dest: 'doc',
-        title: "",
-        html5Mode: false
-      },
-      all: ['build/src/**/*.js']
-    },
-
     tslint: {
       options: {
         configuration: grunt.file.readJSON("env/tslint.json")
       },
       files: {
-        src: ['../src/**/*.ts']
+        src: ['src/client/**/*.ts']
       }
     }
   });
@@ -120,6 +110,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-typescript');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-ngdocs');

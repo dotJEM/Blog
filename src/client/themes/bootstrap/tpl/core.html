@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">My Blog</a>
+        <a class="navbar-brand" sref="'home'" ng-bind="settings.title"></a>
     </div>
     <!-- TODO: Menu items should be based on modules -->
     <div class="navbar-collapse collapse">
@@ -24,7 +24,7 @@
             <div class="form-group">
                 <input type="text" placeholder="Search" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Search</button>
+            <button type="submit" class="btn btn-default"><span class="icon-search" /></button>
         </form>
 
     </div><!--/.nav-collapse -->
