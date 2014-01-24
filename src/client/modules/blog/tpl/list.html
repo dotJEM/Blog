@@ -1,5 +1,6 @@
 <article ng-repeat="article in model.articles">
     <h3><a sref="'blog.post'" params="{ id: article.id }" ng-bind="article.title"></a></h3>
+    <small ng-bind="article.created | date:'yyyy-MM-dd'"></small>
     <div class="clearfix">
         <div class="pull-left">
             <span class="icon-tag" ng-show="article.tags" /> &nbsp;
