@@ -13,6 +13,7 @@ angular.module('dotjem.blog.blog').config([<any>'$stateProvider', '$moduleProvid
     //
     // But for now all this is ok as we really just need to get started, but at some point we need a smarter way.
     $stateProvider
+
         .state('blog', {
             route: '/blog',
             resolve: {

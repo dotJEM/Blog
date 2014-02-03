@@ -1,8 +1,5 @@
-/// <reference path="../../lib/scripts/assets.d.ts" />
-/// <reference path="classes/DateFormat.ts" />
 angular.module('dotjem.blog.core', ['dotjem.routing']);
 
-//TODO: Move to file
 angular.module('dotjem.blog.core').provider('$module', [function () {
         var modules = {};
 
@@ -22,7 +19,6 @@ angular.module('dotjem.blog.core').provider('$module', [function () {
                     });
                     return mods;
                 };
-
                 return service;
             }];
     }]);
@@ -73,7 +69,6 @@ angular.module('dotjem.blog.core').provider('content', [function () {
         function parseDate(input) {
             var parts = input.split('-');
 
-            // new Date(year, month [, day [, hours[, minutes[, seconds[, ms]]]]])
             return new Date(parts[0], parts[1] - 1, parts[2]);
         }
 
@@ -198,4 +193,3 @@ angular.module('dotjem.blog.core').provider('content', [function () {
                 return self;
             }];
     }]);
-//# sourceMappingURL=dotjem.core.js.map

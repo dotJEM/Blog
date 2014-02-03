@@ -24,8 +24,8 @@ angular.module('dotjem.blog.core').provider('$module', [<any>
                 });
                 return mods;
             };
-
             return service;
+
         }]
     }]);
 

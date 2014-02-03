@@ -11,5 +11,6 @@ angular.module('dotjem.blog',
       'dotjem.blog.about'
 //      'dotjem.blog.search',
 //      'dotjem.blog.admin'
+
     ]);
 

@@ -11,7 +11,17 @@ module.exports = function (grunt) {
     },
 
     typescript: {
-      src: {
+      dev: {
+        src: ['src/client/**/*.ts'],
+        options: {
+          module: 'commonjs',
+          target: 'es5',
+          sourcemap: true,
+          declaration: false,
+          comments: true
+        }
+      },
+      build: {
         src: ['src/client/**/*.ts'],
         dest: 'build',
         options: {
@@ -19,31 +29,8 @@ module.exports = function (grunt) {
           target: 'es5',
           sourcemap: false,
           declaration: false,
-          comments: true
+          comments: false
         }
-      }
-    },
-
-    concat: {
-      options: {
-        banner: '<%= banner %>',
-        stripBanners: true
-      },
-      core: {
-        src: ['src/prefix',
-
-          'src/suffix'],
-        dest: 'build/<%= pkg.name %>.js'
-      }
-    },
-
-    uglify: {
-      options: {
-        banner: '<%= banner %>'
-      },
-      core: {
-        src: '<%= concat.core.dest %>',
-        dest: 'build/<%= pkg.name %>.min.js'
       }
     },
 
@@ -62,7 +49,7 @@ module.exports = function (grunt) {
         options: {
           port: 8088,
           base: 'src/client',
-          keepalive: true
+          keepalive: false
         }
       }
     },
@@ -70,27 +57,6 @@ module.exports = function (grunt) {
     watch: {
       files: ['src/**/*.ts'],
       tasks: ['build']
-    },
-
-    copy: {
-      release: {
-        files: [{
-          expand: true,
-          src: ['build/*.js'],
-          dest: 'release/',
-          rename: function (dest, src) {
-            if (src.indexOf('.min') !== -1) {
-              return src
-                .replace('.min.js', '-<%= pkg.version %>.min.js')
-                .replace('build', 'release/v<%= pkg.version %>');
-            } else {
-              return src
-                .replace('.js', '-<%= pkg.version %>.js')
-                .replace('build', 'release/v<%= pkg.version %>');
-            }
-          }
-        }]
-      }
     },
 
     tslint: {
@@ -117,8 +83,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-tslint');
 
   // Default task.
-  grunt.registerTask('build', ['typescript', 'concat', 'uglify']);
-  grunt.registerTask('default', ['clean', 'tslint', 'build', 'karma', 'ngdocs']);
+  grunt.registerTask('build', ['typescript']);
+  grunt.registerTask('default', ['connect', 'watch']);
   grunt.registerTask('release', ['default', 'copy:release']);
   grunt.registerTask('server', ['clean', 'build', 'connect', 'watch']);
   grunt.registerTask('docs', ['clean', 'build', 'ngdocs']);
